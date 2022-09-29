@@ -125,7 +125,7 @@
                                 <div class="squaresm shadow-sm text-center" style="cursor: pointer;" onclick="globalUpdate('fan1');">
                                     <div class="centered-element">
                                         <!-- <i class="fas fa-tint-slash lampico" id="ic-fan1"></i>   -->  
-                                        <img class="lampico" src="img/fan-off.png" id="ic-fan1" style="width: 3rem; height: 3rem">                                  
+                                        <img class="lampico fan-ic-off" src="img/fan-off.png" id="ic-fan1">                                  
                                     </div>                                    
                                 </div>
                             </div>                            
@@ -181,6 +181,20 @@
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
+
+    <style>
+        .fan-ic-off {
+            width: 3rem; 
+            height: 3rem;
+            filter: invert(47%) sepia(1%) saturate(0%) hue-rotate(359deg) brightness(97%) contrast(86%);
+        }
+
+        .fan-ic-on {
+            width: 3rem; 
+            height: 3rem;
+            filter: invert(43%) sepia(35%) saturate(3688%) hue-rotate(180deg) brightness(102%) contrast(107%);
+        }
+    </style>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
