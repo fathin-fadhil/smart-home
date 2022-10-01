@@ -57,11 +57,11 @@ $(document).ready(function() {
 function globalUpdate(field) {
     var database = firebase.database();
     var fieldVal;
-    database.ref().child('Relay/' + field).on("value",function(snap){
+    database.ref().child('Fan/' + field).on("value",function(snap){
         fieldVal = snap.val();
     })
 
-    var firebaseRef = firebase.database().ref().child("Relay/" + field);
+    var firebaseRef = firebase.database().ref().child("Fan/" + field);
     if(fieldVal == "ON"){
             firebaseRef.set("OFF");
             fieldVal="OFF";
