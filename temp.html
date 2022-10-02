@@ -121,11 +121,11 @@
                     <!-- saklarr lampuuu -->
                     <div class="col-sm-12 col-md-6 col-xl-4 mt-0 mb-4">
                         <div class="h-100 bg-light rounded p-4 shadow">
-                            <div class="d-flex justify-content-between mb-4">
-                                <h6 class="mb-0">Kamar Tamu</h6>
+                            <div class="d-flex mb-4 justify-content-center">
+                                <h6 class="mb-0">Ruang Tamu</h6>
                             </div>
 
-                            <div class="d-flex justify-content-center">
+                            <div class="d-flex justify-content-around">
                                 <div>
                                     <div id="gauge1" class="gauge-container text-center"></div>
                                 </div>
@@ -139,11 +139,11 @@
                     
                     <div class="col-sm-12 col-md-6 col-xl-4 mt-0 mb-4">
                         <div class="h-100 bg-light rounded p-4 shadow">
-                            <div class="d-flex justify-content-between mb-4">
-                                <h6 class="mb-0">Kamar Tamu</h6>
+                            <div class="d-flex mb-4 justify-content-center">
+                                <h6 class="mb-0">Teras</h6>
                             </div>
 
-                            <div class="d-flex justify-content-center">
+                            <div class="d-flex justify-content-around">
                                 <div>
                                     <div id="gauge2" class="gauge-container text-center"></div>
                                 </div>
@@ -157,17 +157,71 @@
 
                     <div class="col-sm-12 col-md-6 col-xl-4 mt-0 mb-4">
                         <div class="h-100 bg-light rounded p-4 shadow">
-                            <div class="d-flex justify-content-between mb-4">
-                                <h6 class="mb-0">Kamar Tamu</h6>
+                            <div class="d-flex mb-4 justify-content-center">
+                                <h6 class="mb-0">Kamar Depan</h6>
                             </div>
 
-                            <div class="d-flex justify-content-center">
+                            <div class="d-flex justify-content-around">
                                 <div>
                                     <div id="gauge3" class="gauge-container text-center"></div>
                                 </div>
 
                                 <div>
                                     <div id="gauge3hum" class="gauge-container text-center"></div>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6 col-xl-4 mt-0 mb-4">
+                        <div class="h-100 bg-light rounded p-4 shadow">
+                            <div class="d-flex mb-4 justify-content-center">
+                                <h6 class="mb-0">Ruang Tengah</h6>
+                            </div>
+
+                            <div class="d-flex justify-content-around">
+                                <div>
+                                    <div id="gauge4" class="gauge-container text-center"></div>
+                                </div>
+
+                                <div>
+                                    <div id="gauge4hum" class="gauge-container text-center"></div>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6 col-xl-4 mt-0 mb-4">
+                        <div class="h-100 bg-light rounded p-4 shadow">
+                            <div class="d-flex mb-4 justify-content-center">
+                                <h6 class="mb-0">Kamar Tengah</h6>
+                            </div>
+
+                            <div class="d-flex justify-content-around">
+                                <div>
+                                    <div id="gauge5" class="gauge-container text-center"></div>
+                                </div>
+
+                                <div>
+                                    <div id="gauge5hum" class="gauge-container text-center"></div>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6 col-xl-4 mt-0 mb-4">
+                        <div class="h-100 bg-light rounded p-4 shadow">
+                            <div class="d-flex mb-4 justify-content-center">
+                                <h6 class="mb-0">Kamar Belakang</h6>
+                            </div>
+
+                            <div class="d-flex justify-content-around">
+                                <div>
+                                    <div id="gauge6" class="gauge-container text-center"></div>
+                                </div>
+
+                                <div>
+                                    <div id="gauge6hum" class="gauge-container text-center"></div>
                                 </div>
                             </div>                            
                         </div>
@@ -252,6 +306,78 @@
         });
 
         var gauge3hum = GaugeHum(document.getElementById("gauge3hum"), {
+            max: 100,
+            value: 0,
+            color: function(value) {
+                if(value < 17) {
+                    return "#80CEF8";
+                } if(value < 25){
+                    return "#97C0DB";
+                } else { return "#FF8053"; }
+            }
+        });
+
+        var gauge4 = Gauge(document.getElementById("gauge4"), {
+            max: 40,
+            value: 0,
+            color: function(value) {
+                if(value < 17) {
+                    return "#80CEF8";
+                } if(value < 25){
+                    return "#97C0DB";
+                } else { return "#FF8053"; }
+            }
+        });
+
+        var gauge4hum = GaugeHum(document.getElementById("gauge4hum"), {
+            max: 100,
+            value: 0,
+            color: function(value) {
+                if(value < 17) {
+                    return "#80CEF8";
+                } if(value < 25){
+                    return "#97C0DB";
+                } else { return "#FF8053"; }
+            }
+        });
+
+        var gauge5 = Gauge(document.getElementById("gauge5"), {
+            max: 40,
+            value: 0,
+            color: function(value) {
+                if(value < 17) {
+                    return "#80CEF8";
+                } if(value < 25){
+                    return "#97C0DB";
+                } else { return "#FF8053"; }
+            }
+        });
+
+        var gauge5hum = GaugeHum(document.getElementById("gauge5hum"), {
+            max: 100,
+            value: 0,
+            color: function(value) {
+                if(value < 17) {
+                    return "#80CEF8";
+                } if(value < 25){
+                    return "#97C0DB";
+                } else { return "#FF8053"; }
+            }
+        });
+
+        var gauge6 = Gauge(document.getElementById("gauge6"), {
+            max: 40,
+            value: 0,
+            color: function(value) {
+                if(value < 17) {
+                    return "#80CEF8";
+                } if(value < 25){
+                    return "#97C0DB";
+                } else { return "#FF8053"; }
+            }
+        });
+
+        var gauge6hum = GaugeHum(document.getElementById("gauge6hum"), {
             max: 100,
             value: 0,
             color: function(value) {
