@@ -11,11 +11,10 @@ spinner();
 var suhu1;
 var suhu2;
 var suhu3;
-var suhu4;
-var suhu5;
-var suhu6;
-var suhu7;
-var suhu8;
+
+var hum1;
+var hum2;
+var hum3;
 
 $(document).ready(function() {
     //sidebar toggle start
@@ -30,27 +29,25 @@ $(document).ready(function() {
         suhu1 = snap.val().suhu1;
         suhu2 = snap.val().suhu2;
         suhu3 = snap.val().suhu3;
-        suhu4 = snap.val().suhu4;
-        suhu5 = snap.val().suhu5;
-        suhu6 = snap.val().suhu6;
-        suhu7 = snap.val().suhu7;
-        suhu8 = snap.val().suhu8;
+
+        hum1 = snap.val().hum1;
+        hum2 = snap.val().hum2;
+        hum3 = snap.val().hum3;
+
 
         /* document.getElementById("t1").innerHTML = suhu1 + '°C';
         document.getElementById("t2").innerHTML = suhu2 + '°C'; */
-        update(suhu1, suhu2, suhu3, suhu4, suhu5, suhu6, suhu7, suhu8);
+        update(suhu1, suhu2, suhu3, hum1, hum2, hum3);
 
     });
 });
 
-function update(num1, num2, num3, num4, num5, num6, num7, num8) {
+function update(num1, num2, num3, num4, num5, num6) {
     gauge1.setValueAnimated(num1,2)
     gauge2.setValueAnimated(num2,2)
     gauge3.setValueAnimated(num3,2)
-    gauge4.setValueAnimated(num4,2)
-    gauge5.setValueAnimated(num5,2)
-    gauge6.setValueAnimated(num6,2)
-    gauge7.setValueAnimated(num7,2)
-    gauge8.setValueAnimated(num8,2)
+    gauge1hum.setValueAnimated(num4,2)
+    gauge2hum.setValueAnimated(num5,2)
+    gauge3hum.setValueAnimated(num6,2)
     
 }
