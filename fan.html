@@ -109,7 +109,9 @@
 
 
             <!-- Blank Start -->
-            <div class="container-fluid pt-4 px-4">
+            <div id="button"><button class="btn btn-primary" onclick="myFunction()" id="Button1" >Automatic mode</button>
+            <button class="btn btn-primary" class="Btn-auto" > Manual Mode</button>
+            <div class="container-fluid pt-4 px-4" id="MyContainer">
 
                 <div class="row g-4">
                     <div class="col-sm-12 col-xl-6">
@@ -150,6 +152,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
                
                                 </div>
@@ -161,13 +164,20 @@
             </div>
         </div>
         <!-- Content End -->
-
+        <script>
+       
+       
+        </script>
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 
     <style>
+        #button1{
+            position:relative;
+            left: 50px;
+        }
         .fan-ic-off {
             width: 3rem; 
             height: 3rem;
