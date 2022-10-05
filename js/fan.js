@@ -72,3 +72,18 @@ function globalUpdate(field) {
     
 }
 
+// mode 
+function myFunction() {
+    var x = document.getElementById("MyContainer");
+    var z= document.getElementById("Button");
+    var T = x,z;
+    if (T.style.display === "none") {
+      T.style.display = "block";
+      $("Button").removeClass("Btn-Manu");
+
+  
+    } else {
+      T.style.display = "none";
+    }
+  }
+  
