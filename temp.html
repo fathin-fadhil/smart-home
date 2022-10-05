@@ -37,6 +37,7 @@
     
     <!-- <script src="js/lamppage.js"></script> -->
     <script src="src/gauge.js"></script>
+    <script src="src/gaugeHum.js"></script>
     <script src="js/temp.js"></script>
 
 </head>
@@ -114,134 +115,116 @@
 
 
             <!-- Blank Start -->
-            <!-- first 4-->
             <div class="container-fluid pt-4 px-4">
-                <div class="d-flex">
-                    <div class="row g-4 flex-fill" style="padding-right: calc(var(--bs-gutter-x) / 2);">
-                        <div class="col-sm col-md col-xl">
-                            <div class="h-100 bg-light rounded p-4 shadow">
-                                <div class="text-center justify-content-center mb-2">
-                                    <h6 class="mb-0">Temperatur</h6>
-                                    <h6 class="mb-0">Ruang Tamu</h6>
-                                </div>
-                                <div class="py-2">
-                                    <div class="col" >
-                                        <div id="gauge1" class="gauge-container text-center">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="row g-4 mt-0">
 
-                        <div class="col-sm col-md col-xl">
-                            <div class="h-100 bg-light rounded p-4 shadow">
-                                <div class="text-center justify-content-center mb-2">
-                                    <h6 class="mb-0">Temperatur</h6>
-                                    <h6 class="mb-0">Teras</h6>
-                                </div>
-                                <div class="py-2">
-                                    <div class="col" >
-                                        <div id="gauge2" class="gauge-container three text-center"></div>      
-                                    </div>
-                                </div>
+                    <!-- saklarr lampuuu -->
+                    <div class="col-sm-12 col-md-6 col-xl-4 mt-0 mb-4">
+                        <div class="h-100 bg-light rounded p-4 shadow">
+                            <div class="d-flex mb-4 justify-content-center">
+                                <h6 class="mb-0">Ruang Tamu</h6>
                             </div>
+
+                            <div class="d-flex justify-content-around">
+                                <div>
+                                    <div id="gauge1" class="gauge-container text-center"></div>
+                                </div>
+
+                                <div>
+                                    <div id="gauge1hum" class="gauge-container text-center"></div>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-12 col-md-6 col-xl-4 mt-0 mb-4">
+                        <div class="h-100 bg-light rounded p-4 shadow">
+                            <div class="d-flex mb-4 justify-content-center">
+                                <h6 class="mb-0">Teras</h6>
+                            </div>
+
+                            <div class="d-flex justify-content-around">
+                                <div>
+                                    <div id="gauge2" class="gauge-container text-center"></div>
+                                </div>
+
+                                <div>
+                                    <div id="gauge2hum" class="gauge-container text-center"></div>
+                                </div>
+                            </div>                            
                         </div>
                     </div>
 
-                    <div class="row g-4 flex-fill" style="padding-left: calc(var(--bs-gutter-x) / 2);">
-                        <div class="col-sm col-md col-xl">
-                            <div class="h-100 bg-light rounded p-4 shadow">
-                                <div class="text-center justify-content-center mb-2">
-                                    <h6 class="mb-0">Temperatur</h6>
-                                    <h6 class="mb-0">Kamar Depan</h6>
-                                </div>
-                                <div class="py-2">
-                                    <div class="col" >
-                                        <div id="gauge3" class="gauge-container three text-center"></div>      
-                                    </div>
-                                </div>
+                    <div class="col-sm-12 col-md-6 col-xl-4 mt-0 mb-4">
+                        <div class="h-100 bg-light rounded p-4 shadow">
+                            <div class="d-flex mb-4 justify-content-center">
+                                <h6 class="mb-0">Kamar Depan</h6>
                             </div>
-                        </div>
 
-                        <div class="col-sm col-md col-xl">
-                            <div class="h-100 bg-light rounded p-4 shadow">
-                                <div class="text-center justify-content-center mb-2">
-                                    <h6 class="mb-0">Temperatur</h6>
-                                    <h6 class="mb-0">Ruang Tengah</h6>
+                            <div class="d-flex justify-content-around">
+                                <div>
+                                    <div id="gauge3" class="gauge-container text-center"></div>
                                 </div>
-                                <div class="py-2">
-                                    <div class="col" >
-                                        <div id="gauge4" class="gauge-container three text-center"></div>      
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                    
-                    </div>
-                </div>
-            </div>
 
-            <!-- second 4 -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="d-flex">
-                    <div class="row g-4 flex-fill" style="padding-right: calc(var(--bs-gutter-x) / 2);">
-                        <div class="col-sm col-md col-xl">
-                            <div class="h-100 bg-light rounded p-4 shadow">
-                                <div class="text-center justify-content-center mb-2">
-                                    <h6 class="mb-0">Temperatur</h6>
-                                    <h6 class="mb-0">Kamar Belakang</h6>
+                                <div>
+                                    <div id="gauge3hum" class="gauge-container text-center"></div>
                                 </div>
-                                <div class="py-2">
-                                    <div class="col" >
-                                        <div id="gauge5" class="gauge-container text-center">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm col-md col-xl">
-                            <div class="h-100 bg-light rounded p-4 shadow">
-                                <div class="text-center justify-content-center mb-2">
-                                    <h6 class="mb-0">Temperatur</h6>
-                                    <h6 class="mb-0">Dapur</h6>
-                                </div>
-                                <div class="py-2">
-                                    <div class="col" >
-                                        <div id="gauge6" class="gauge-container three text-center"></div>      
-                                    </div>
-                                </div>
-                            </div>
+                            </div>                            
                         </div>
                     </div>
 
-                    <div class="row g-4 flex-fill" style="padding-left: calc(var(--bs-gutter-x) / 2);">
-                        <div class="col-sm col-md col-xl">
-                            <div class="h-100 bg-light rounded p-4 shadow">
-                                <div class="text-center justify-content-center mb-2">
-                                    <h6 class="mb-0">Temperatur</h6>
-                                    <h6 class="mb-0">Garasi</h6>
-                                </div>
-                                <div class="py-2">
-                                    <div class="col" >
-                                        <div id="gauge7" class="gauge-container three text-center"></div>      
-                                    </div>
-                                </div>
+                    <div class="col-sm-12 col-md-6 col-xl-4 mt-0 mb-4">
+                        <div class="h-100 bg-light rounded p-4 shadow">
+                            <div class="d-flex mb-4 justify-content-center">
+                                <h6 class="mb-0">Ruang Tengah</h6>
                             </div>
-                        </div>
 
-                        <div class="col-sm col-md col-xl">
-                            <div class="h-100 bg-light rounded p-4 shadow">
-                                <div class="text-center justify-content-center mb-2">
-                                    <h6 class="mb-0">Temperatur</h6>
-                                    <h6 class="mb-0">Ruang Makan</h6>
+                            <div class="d-flex justify-content-around">
+                                <div>
+                                    <div id="gauge4" class="gauge-container text-center"></div>
                                 </div>
-                                <div class="py-2">
-                                    <div class="col" >
-                                        <div id="gauge8" class="gauge-container three text-center"></div>      
-                                    </div>
+
+                                <div>
+                                    <div id="gauge4hum" class="gauge-container text-center"></div>
                                 </div>
+                            </div>                            
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6 col-xl-4 mt-0 mb-4">
+                        <div class="h-100 bg-light rounded p-4 shadow">
+                            <div class="d-flex mb-4 justify-content-center">
+                                <h6 class="mb-0">Kamar Tengah</h6>
                             </div>
-                        </div>                    
+
+                            <div class="d-flex justify-content-around">
+                                <div>
+                                    <div id="gauge5" class="gauge-container text-center"></div>
+                                </div>
+
+                                <div>
+                                    <div id="gauge5hum" class="gauge-container text-center"></div>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6 col-xl-4 mt-0 mb-4">
+                        <div class="h-100 bg-light rounded p-4 shadow">
+                            <div class="d-flex mb-4 justify-content-center">
+                                <h6 class="mb-0">Kamar Belakang</h6>
+                            </div>
+
+                            <div class="d-flex justify-content-around">
+                                <div>
+                                    <div id="gauge6" class="gauge-container text-center"></div>
+                                </div>
+
+                                <div>
+                                    <div id="gauge6hum" class="gauge-container text-center"></div>
+                                </div>
+                            </div>                            
+                        </div>
                     </div>
                 </div>
             </div>
@@ -274,8 +257,32 @@
             }
         });
 
+        var gauge1hum = GaugeHum(document.getElementById("gauge1hum"), {
+            max: 100,
+            value: 0,
+            color: function(value) {
+                if(value < 17) {
+                    return "#80CEF8";
+                } if(value < 25){
+                    return "#97C0DB";
+                } else { return "#FF8053"; }
+            }
+        });
+
         var gauge2 = Gauge(document.getElementById("gauge2"), {
             max: 40,
+            value: 0,
+            color: function(value) {
+                if(value < 17) {
+                    return "#80CEF8";
+                } if(value < 25){
+                    return "#97C0DB";
+                } else { return "#FF8053"; }
+            }
+        });
+
+        var gauge2hum = GaugeHum(document.getElementById("gauge2hum"), {
+            max: 100,
             value: 0,
             color: function(value) {
                 if(value < 17) {
@@ -298,8 +305,32 @@
             }
         });
 
+        var gauge3hum = GaugeHum(document.getElementById("gauge3hum"), {
+            max: 100,
+            value: 0,
+            color: function(value) {
+                if(value < 17) {
+                    return "#80CEF8";
+                } if(value < 25){
+                    return "#97C0DB";
+                } else { return "#FF8053"; }
+            }
+        });
+
         var gauge4 = Gauge(document.getElementById("gauge4"), {
             max: 40,
+            value: 0,
+            color: function(value) {
+                if(value < 17) {
+                    return "#80CEF8";
+                } if(value < 25){
+                    return "#97C0DB";
+                } else { return "#FF8053"; }
+            }
+        });
+
+        var gauge4hum = GaugeHum(document.getElementById("gauge4hum"), {
+            max: 100,
             value: 0,
             color: function(value) {
                 if(value < 17) {
@@ -322,6 +353,18 @@
             }
         });
 
+        var gauge5hum = GaugeHum(document.getElementById("gauge5hum"), {
+            max: 100,
+            value: 0,
+            color: function(value) {
+                if(value < 17) {
+                    return "#80CEF8";
+                } if(value < 25){
+                    return "#97C0DB";
+                } else { return "#FF8053"; }
+            }
+        });
+
         var gauge6 = Gauge(document.getElementById("gauge6"), {
             max: 40,
             value: 0,
@@ -334,20 +377,8 @@
             }
         });
 
-        var gauge7 = Gauge(document.getElementById("gauge7"), {
-            max: 40,
-            value: 0,
-            color: function(value) {
-                if(value < 17) {
-                    return "#80CEF8";
-                } if(value < 25){
-                    return "#97C0DB";
-                } else { return "#FF8053"; }
-            }
-        });
-
-        var gauge8 = Gauge(document.getElementById("gauge8"), {
-            max: 40,
+        var gauge6hum = GaugeHum(document.getElementById("gauge6hum"), {
+            max: 100,
             value: 0,
             color: function(value) {
                 if(value < 17) {
