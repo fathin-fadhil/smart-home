@@ -9,33 +9,40 @@ spinner();
 //spinner end
 
 var Fan1;
-var Fan_2;
+var Fan2;
+var isAuto;
 
+showManual()
 
 $(document).ready(function() {
-    $('#manualMode').fadeToggle();
-    //sidebar toggle start
+    //sidebar toggle
     $('.sidebar-toggler').click(function () {
         $('.sidebar, .content').toggleClass("open");
         return false;
-    });
+    }); 
 
+    var database = firebase.database();
+    
     $("#auto").click(function(){
-        $("#pulu").fadeToggle();
-        $('#manualMode').fadeToggle();
+        var firebaseRef = firebase.database().ref().child("Fan/isAuto");
+        firebaseRef.set(true);
     });
 
     $("#manual").click(function(){
-        $("#pulu").fadeToggle();
-        $('#manualMode').fadeToggle();
+        var firebaseRef = firebase.database().ref().child("Fan/isAuto");
+        firebaseRef.set(false);
     });
-
-    var database = firebase.database();    
 
     database.ref().child('Fan').on("value",function(snap){
         Fan1 = snap.val().fan1;
         Fan2 = snap.val().fan2;
+        isAuto = snap.val().isAuto;
 
+        if (isAuto) {
+            showAuto()
+        } else {
+            showManual()
+        }
             
         if(Fan1 == "ON"){
             $("#sts-kipas-1").text("ON");
@@ -60,8 +67,6 @@ $(document).ready(function() {
             $("#ic-fan2").addClass("fan-ic-off");
             $("#ic-fan2").attr("src","img/fan-off.png");
         }
-
-      
     })
 });
 
@@ -80,21 +85,19 @@ function globalUpdate(field) {
             firebaseRef.set("ON");
             fieldVal="ON";
         }
-    
 }
 
-// mode 
-function myFunction() {
-    var x = document.getElementById("MyContainer");
-    var z= document.getElementById("Button");
-    var T = x,z;
-    if (T.style.display === "none") {
-      T.style.display = "block";
-      $("Button").removeClass("Btn-Manu");
+function showAuto() {
+    $(document).ready(function() {
+        $("#pulu").fadeOut();
+        $('#manualMode').fadeIn();
+    })    
+}
 
-  
-    } else {
-      T.style.display = "none";
-    }
-  }
-  
+function showManual() {
+    $(document).ready(function() {        
+        $("#pulu").fadeIn();
+        $('#manualMode').fadeOut();        
+    })    
+}
+
