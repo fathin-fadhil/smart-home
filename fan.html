@@ -109,11 +109,10 @@
 
 
             <!-- Blank Start -->
-            <div id="button"><button class="btn btn-primary" onclick="myFunction()" id="Button1" >Automatic mode</button>
-            <button class="btn btn-primary" class="Btn-auto" > Manual Mode</button>
+           
             <div class="container-fluid pt-4 px-4" id="MyContainer">
 
-                <div class="row g-4">
+                <div class="row g-4" id="pulu">
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded p-4 shadow">
                             <div class="d-flex justify-content-between">
@@ -146,13 +145,20 @@
                                 <div class="squaresm shadow-sm text-center" style="cursor: pointer;" onclick="globalUpdate('fan2');">
                                     <div class="centered-element">
                                       <img class="lampico fan-ic-off" src="img/fan-off.png" id="ic-fan2">     
-                                    </div>
+                                    </div>                
                                 </div>
                             </div>                           
                         </div>
                     </div>
-<<<<<<< HEAD
+
+                    <p id="auto" class="text-center"> <button class="btn btn-primary" > Automatic Mode</button> </p>
                 </div>
+
+                
+                    <div class="back-button text-center" id="manualMode">
+                      <h1 class="backfont text-center"> Now you In Automatic Mode</h1>  
+                        <button class="btn btn-primary text-center" id="manual"> Manual Mode</button>
+                    </div>
             </div>
 
                
@@ -162,9 +168,11 @@
                     </div>
                 </div>
 
-=======
-                </div>        
->>>>>>> 7fddc7ff8a4ce67212a741eeae1b373a9870314c
+                
+
+
+                       
+
             </div>
         </div>
     </div>
@@ -178,11 +186,20 @@
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 
+<script>
+    
+
+</script>
+
     <style>
-        #button1{
+        /* button{
             position:relative;
             left: 50px;
-        }
+        } */
+        /* #manual,#auto{
+            position: absolute;
+            margin-left: center;
+        } */
         .fan-ic-off {
             width: 3rem; 
             height: 3rem;

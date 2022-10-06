@@ -13,12 +13,23 @@ var Fan_2;
 
 
 $(document).ready(function() {
+    $('#manualMode').fadeToggle();
     //sidebar toggle start
     $('.sidebar-toggler').click(function () {
         $('.sidebar, .content').toggleClass("open");
         return false;
     });
-    
+
+    $("#auto").click(function(){
+        $("#pulu").fadeToggle();
+        $('#manualMode').fadeToggle();
+    });
+
+    $("#manual").click(function(){
+        $("#pulu").fadeToggle();
+        $('#manualMode').fadeToggle();
+    });
+
     var database = firebase.database();    
 
     database.ref().child('Fan').on("value",function(snap){
