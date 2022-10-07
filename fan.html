@@ -109,9 +109,10 @@
 
 
             <!-- Blank Start -->
-            <div class="container-fluid pt-4 px-4">
+           
+            <div class="container-fluid pt-4 px-4" id="MyContainer">
 
-                <div class="row g-4">
+                <div class="row g-4" id="pulu">
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded p-4 shadow">
                             <div class="d-flex justify-content-between">
@@ -144,23 +145,36 @@
                                 <div class="squaresm shadow-sm text-center" style="cursor: pointer;" onclick="globalUpdate('fan2');">
                                     <div class="centered-element">
                                       <img class="lampico fan-ic-off" src="img/fan-off.png" id="ic-fan2">     
-                                    </div>
+                                    </div>                
                                 </div>
                             </div>                           
                         </div>
                     </div>
-                </div>        
+                    <p id="auto" class="text-center"> <button class="btn btn-primary" >Switch to Automatic Mode</button> </p>
+                </div>
+                
+                    <div class="back-button text-center" id="manualMode">
+                        <h1 class="backfont text-center">Currently In Auto Mode</h1>  
+                        <button class="btn btn-primary text-center" id="manual">Switch to Manual Mode</button>
+                    </div>                
+                </div>               
             </div>
-        </div>
-    </div>
+        </div> 
         <!-- Content End -->
-
-
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 
     <style>
+       
+        #manualMode{
+            /* margin-top: 50px;
+            transform: translateY(150%); */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        }
         .fan-ic-off {
             width: 3rem; 
             height: 3rem;

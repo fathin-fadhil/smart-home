@@ -9,22 +9,40 @@ spinner();
 //spinner end
 
 var Fan1;
-var Fan_2;
+var Fan2;
+var isAuto;
 
+showManual()
 
 $(document).ready(function() {
-    //sidebar toggle start
+    //sidebar toggle
     $('.sidebar-toggler').click(function () {
         $('.sidebar, .content').toggleClass("open");
         return false;
-    });
+    }); 
+
+    var database = firebase.database();
     
-    var database = firebase.database();    
+    $("#auto").click(function(){
+        var firebaseRef = firebase.database().ref().child("Fan/isAuto");
+        firebaseRef.set(true);
+    });
+
+    $("#manual").click(function(){
+        var firebaseRef = firebase.database().ref().child("Fan/isAuto");
+        firebaseRef.set(false);
+    });
 
     database.ref().child('Fan').on("value",function(snap){
         Fan1 = snap.val().fan1;
         Fan2 = snap.val().fan2;
+        isAuto = snap.val().isAuto;
 
+        if (isAuto) {
+            showAuto()
+        } else {
+            showManual()
+        }
             
         if(Fan1 == "ON"){
             $("#sts-kipas-1").text("ON");
@@ -49,8 +67,6 @@ $(document).ready(function() {
             $("#ic-fan2").addClass("fan-ic-off");
             $("#ic-fan2").attr("src","img/fan-off.png");
         }
-
-      
     })
 });
 
@@ -69,6 +85,19 @@ function globalUpdate(field) {
             firebaseRef.set("ON");
             fieldVal="ON";
         }
-    
+}
+
+function showAuto() {
+    $(document).ready(function() {
+        $("#pulu").fadeOut();
+        $('#manualMode').fadeIn();
+    })    
+}
+
+function showManual() {
+    $(document).ready(function() {        
+        $("#pulu").fadeIn();
+        $('#manualMode').fadeOut();        
+    })    
 }
 
