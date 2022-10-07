@@ -30,6 +30,10 @@ $(document).ready(function() {
     var kran1;
     var kran2;
     var kran3;
+    var hum1;
+    var hum2;
+    var hum3;
+    var hum4;
 
     database.ref().child('Relay').on("value",function(snap){
         StatusRelay1 = snap.val().StatusRelay1;
@@ -80,11 +84,20 @@ $(document).ready(function() {
         suhu2 = snap.val().suhu2;
         suhu3 = snap.val().suhu3;
         suhu4 = snap.val().suhu4;
+        hum1 = snap.val().hum1;
+        hum2 = snap.val().hum2;
+        hum3 = snap.val().hum3;
+        hum4 = snap.val().hum4;
 
         document.getElementById("temp-ruangtamu").innerHTML = suhu1;
         document.getElementById("temp-teras").innerHTML = suhu2;
         document.getElementById("temp-kamardepan").innerHTML = suhu3;
         document.getElementById("temp-ruangtengah").innerHTML = suhu4;
+
+        document.getElementById("hum-ruangtamu").innerHTML = hum1;
+        document.getElementById("hum-teras").innerHTML = hum2;
+        document.getElementById("hum-kamardepan").innerHTML = hum3;
+        document.getElementById("hum-ruangtengah").innerHTML = hum4;
     })
 
     database.ref().child('Kran').on('value', function (snap){

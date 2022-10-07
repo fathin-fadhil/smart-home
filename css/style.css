@@ -294,11 +294,13 @@
 }
 
 .dot {
-    width: 10rem;
-    height: 10rem;
+    width: 8rem;
+    height: 8rem;
     background-color: rgb(255, 255, 255);
     border-radius: 50%;
-    display: inline-block;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
     }
 
 .squaresm {
@@ -344,4 +346,10 @@
 
 .ic-active {
     color: var(--primary);
+}
+
+.imageicon {
+    width: 1rem;
+    height: 1rem;
+    filter: invert(48%) sepia(8%) saturate(21%) hue-rotate(318deg) brightness(93%) contrast(90%);
 }
