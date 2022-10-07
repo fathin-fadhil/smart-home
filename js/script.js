@@ -19,21 +19,23 @@ $(document).ready(function() {
     });
 
     var database = firebase.database();
-    var StatusRelay1;
-    var StatusRelay2;
-    var StatusRelay3;
-    var StatusRelay4;
-    var suhu1;
-    var suhu2;
-    var suhu3;
-    var suhu4;
-    var kran1;
-    var kran2;
-    var kran3;
-    var hum1;
-    var hum2;
-    var hum3;
-    var hum4;
+    var StatusRelay1
+    var StatusRelay2
+    var StatusRelay3
+    var StatusRelay4
+    var suhu1
+    var suhu2
+    var suhu3
+    var suhu4
+    var kran1
+    var kran2
+    var kran3
+    var hum1
+    var hum2
+    var hum3
+    var hum4
+    var fan1
+    var fan2
 
     database.ref().child('Relay').on("value",function(snap){
         StatusRelay1 = snap.val().StatusRelay1;
@@ -133,4 +135,46 @@ $(document).ready(function() {
             $("#dh-ic-tsamping").addClass("nav-link disabled");
         }
     })
+
+    database.ref().child('Fan').on('value', function (snap){
+        fan1 = snap.val().fan1
+        fan2 = snap.val().fan2
+        isAuto = snap.val().isAuto
+
+        $("#sts-fan1").text(fan1)
+        $("#sts-fan2").text(fan2)
+
+        if (fan1 == "ON") {
+            $("#ic-fan1").removeClass("fanoff")
+        } else {
+            $("#ic-fan1").addClass("fanoff")
+        }
+
+        if (fan2 == "ON") {
+            $("#ic-fan2").removeClass("fanoff")
+        } else {
+            $("#ic-fan2").addClass("fanoff")
+        }
+
+        if (isAuto) {
+            autoView()
+        } else {
+            manualView()
+        }
+    })
 });
+
+function autoView() {
+    $("#manualView").fadeOut();
+    $("#autoView").fadeIn();
+    $("#manualView").css("visibility", "hidden")
+    $("#autoView").css("visibility", "visible")
+    
+}
+
+function manualView() {
+    $("#autoView").fadeOut();
+    $("#manualView").fadeIn();    
+    $("#autoView").css("visibility", "hidden")
+    $("#manualView").css("visibility", "visible")
+}
