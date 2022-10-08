@@ -2,14 +2,14 @@
 var spinner = function () {
     setTimeout(function () {
         if ($('#spinner').length > 0) {
-            $('#spinner').removeClass('show');
+            $('#spinner').removeClass('show');            
         }
     }, 1000);
 };
 spinner();
 //spinner end
 
-
+manualView()
 
 $(document).ready(function() {
     //sidebar toggle start
@@ -167,14 +167,10 @@ $(document).ready(function() {
 function autoView() {
     $("#manualView").fadeOut();
     $("#autoView").fadeIn();
-    $("#manualView").css("visibility", "hidden")
-    $("#autoView").css("visibility", "visible")
     
 }
 
 function manualView() {
     $("#autoView").fadeOut();
     $("#manualView").fadeIn();    
-    $("#autoView").css("visibility", "hidden")
-    $("#manualView").css("visibility", "visible")
 }
