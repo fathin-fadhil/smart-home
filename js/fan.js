@@ -1,9 +1,10 @@
 var spinner = function () {
     setTimeout(function () {
         if ($('#spinner').length > 0) {
-            $('#spinner').removeClass('show');
+            console.log("🚀 ~ file: fan.js ~ line 4 ~ $('#spinner').length", $('#spinner').length)
+            $('#spinner').removeClass('show');            
         }
-    }, 1);
+    }, 1000);
 };
 spinner();
 //spinner end
