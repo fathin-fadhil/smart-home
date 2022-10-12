@@ -90,7 +90,7 @@
     transition: 0.5s;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1350px) {
     .sidebar {
         margin-left: 0;
     }
@@ -109,7 +109,7 @@
     }
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 1349px) {
     .sidebar {
         margin-left: -250px;
     }
@@ -294,11 +294,13 @@
 }
 
 .dot {
-    width: 10rem;
-    height: 10rem;
+    width: 8rem;
+    height: 8rem;
     background-color: rgb(255, 255, 255);
     border-radius: 50%;
-    display: inline-block;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
     }
 
 .squaresm {
@@ -344,4 +346,10 @@
 
 .ic-active {
     color: var(--primary);
+}
+
+.imageicon {
+    width: 1rem;
+    height: 1rem;
+    filter: invert(48%) sepia(8%) saturate(21%) hue-rotate(318deg) brightness(93%) contrast(90%);
 }
