@@ -2,14 +2,14 @@
 var spinner = function () {
     setTimeout(function () {
         if ($('#spinner').length > 0) {
-            $('#spinner').removeClass('show');
+            $('#spinner').removeClass('show');            
         }
-    }, 1);
+    }, 1000);
 };
 spinner();
 //spinner end
 
-
+manualView()
 
 $(document).ready(function() {
     //sidebar toggle start
@@ -19,17 +19,27 @@ $(document).ready(function() {
     });
 
     var database = firebase.database();
-    var StatusRelay1;
-    var StatusRelay2;
-    var StatusRelay3;
-    var StatusRelay4;
-    var suhu1;
-    var suhu2;
-    var suhu3;
-    var suhu4;
-    var kran1;
-    var kran2;
-    var kran3;
+    var StatusRelay1
+    var StatusRelay2
+    var StatusRelay3
+    var StatusRelay4
+    var suhu1
+    var suhu2
+    var suhu3
+    var suhu4
+    var kran1
+    var kran2
+    var kran3
+    var hum1
+    var hum2
+    var hum3
+    var hum4
+    var fan1
+    var fan2
+    var volt
+    var tWatt
+    var watt
+    var curr
 
     database.ref().child('Relay').on("value",function(snap){
         StatusRelay1 = snap.val().StatusRelay1;
@@ -80,11 +90,20 @@ $(document).ready(function() {
         suhu2 = snap.val().suhu2;
         suhu3 = snap.val().suhu3;
         suhu4 = snap.val().suhu4;
+        hum1 = snap.val().hum1;
+        hum2 = snap.val().hum2;
+        hum3 = snap.val().hum3;
+        hum4 = snap.val().hum4;
 
         document.getElementById("temp-ruangtamu").innerHTML = suhu1;
         document.getElementById("temp-teras").innerHTML = suhu2;
         document.getElementById("temp-kamardepan").innerHTML = suhu3;
         document.getElementById("temp-ruangtengah").innerHTML = suhu4;
+
+        document.getElementById("hum-ruangtamu").innerHTML = hum1;
+        document.getElementById("hum-teras").innerHTML = hum2;
+        document.getElementById("hum-kamardepan").innerHTML = hum3;
+        document.getElementById("hum-ruangtengah").innerHTML = hum4;
     })
 
     database.ref().child('Kran').on('value', function (snap){
@@ -120,4 +139,55 @@ $(document).ready(function() {
             $("#dh-ic-tsamping").addClass("nav-link disabled");
         }
     })
+
+    database.ref().child('Fan').on('value', function (snap){
+        fan1 = snap.val().fan1
+        fan2 = snap.val().fan2
+        isAuto = snap.val().isAuto
+
+        $("#sts-fan1").text(fan1)
+        $("#sts-fan2").text(fan2)
+
+        if (fan1 == "ON") {
+            $("#ic-fan1").removeClass("fanoff")
+        } else {
+            $("#ic-fan1").addClass("fanoff")
+        }
+
+        if (fan2 == "ON") {
+            $("#ic-fan2").removeClass("fanoff")
+        } else {
+            $("#ic-fan2").addClass("fanoff")
+        }
+
+        if (isAuto) {
+            autoView()
+        } else {
+            manualView()
+        }
+    })
+
+    database.ref().child('Wmeter').on('value', function (snap){
+        watt = snap.val().watt
+        volt = snap.val().volt
+        tWatt = snap.val().tWatt
+        curr = snap.val().current
+
+        $("#dt-watt").text(watt)
+        $("#dt-volt").text(volt)
+        $("#dt-tWatt").text(tWatt)
+        $("#dt-curr").text(curr)
+
+    })
 });
+
+function autoView() {
+    $("#manualView").fadeOut();
+    $("#autoView").fadeIn();
+    
+}
+
+function manualView() {
+    $("#autoView").fadeOut();
+    $("#manualView").fadeIn();    
+}
