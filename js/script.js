@@ -36,6 +36,10 @@ $(document).ready(function() {
     var hum4
     var fan1
     var fan2
+    var volt
+    var tWatt
+    var watt
+    var curr
 
     database.ref().child('Relay').on("value",function(snap){
         StatusRelay1 = snap.val().StatusRelay1;
@@ -161,6 +165,19 @@ $(document).ready(function() {
         } else {
             manualView()
         }
+    })
+
+    database.ref().child('Wmeter').on('value', function (snap){
+        watt = snap.val().watt
+        volt = snap.val().volt
+        tWatt = snap.val().tWatt
+        curr = snap.val().current
+
+        $("#dt-watt").text(watt)
+        $("#dt-volt").text(volt)
+        $("#dt-tWatt").text(tWatt)
+        $("#dt-curr").text(curr)
+
     })
 });
 
