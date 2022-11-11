@@ -188,6 +188,18 @@ $(document).ready(function() {
         $("#dt-curr").text(curr)
 
     })
+
+    database.ref().child('Smoke').on('value', function(snap){
+        isSmoking = snap.val().isSmoking
+
+        if(isSmoking) {
+            $("#smokeWarn").removeClass("d-none")
+            $("#smokeText").text("Smoke Detected")
+        } else {
+            $("#smokeWarn").addClass("d-none")
+            $("#smokeText").text("No Smoke Detected")
+        }
+    })
 });
 
 function autoView() {

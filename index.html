@@ -161,17 +161,21 @@
                         <div class="bg-light rounded p-4 shadow" style="height: 100%;">
                             <div class="row centered-element">                                
                                 
-                                <div class=" col-auto">
+                                <div class=" col-auto position-relative">
                                     <span class="dot shadow-sm">
                                         <img src="img/smoke-detector.png " class=" big-svg"/>                                                
                                     </span>
+
+                                    <div class=" d-flex align-items-center justify-content-center" style="position:absolute; margin-left: 60%; margin-top: -20%;" id="smokeWarn">
+                                        <i class="fa fa-exclamation-circle text-center" style="color: red; font-size:xx-large"></i>
+                                    </div>
                                 </div>
 
                                 <div class="col">
                                     <div class="centered-element">                                        
                                         <h4 class="m-0">Smoke Detector :</h6>                                                                        
                                         <div class="d-flex">
-                                          <h5 class="mb-0 bigNum" >No Smoke Detected</h3>                                          
+                                          <p class="mb-0" id="smokeText">No Smoke Detected</p>                                          
                                         </div>                                        
                                     </div>                                  
                                 </div>
