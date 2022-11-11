@@ -9,6 +9,15 @@ var spinner = function () {
 spinner();
 //spinner end
 
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function() {
+      navigator.serviceWorker
+        .register("serviceWorker.js")
+        .then(res => console.log("service worker registered"))
+        .catch(err => console.log("service worker not registered", err))
+    })
+  }
+
 manualView()
 
 $(document).ready(function() {
@@ -178,6 +187,18 @@ $(document).ready(function() {
         $("#dt-tWatt").text(tWatt)
         $("#dt-curr").text(curr)
 
+    })
+
+    database.ref().child('Smoke').on('value', function(snap){
+        isSmoking = snap.val().isSmoking
+
+        if(isSmoking) {
+            $("#smokeWarn").removeClass("d-none")
+            $("#smokeText").text("Smoke Detected")
+        } else {
+            $("#smokeWarn").addClass("d-none")
+            $("#smokeText").text("No Smoke Detected")
+        }
     })
 });
 

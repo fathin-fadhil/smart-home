@@ -33,6 +33,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+
+    <!-- pwa attempt #1-->
+        <link rel="manifest" href="manifest.json" />
+        <!-- ios support -->
+        <link rel="apple-touch-icon" href="img/icons/icon-72x72.png" />
+        <link rel="apple-touch-icon" href="img/icons/icon-96x96.png" />
+        <link rel="apple-touch-icon" href="img/icons/icon-128x128.png" />
+        <link rel="apple-touch-icon" href="img/icons/icon-144x144.png" />
+        <link rel="apple-touch-icon" href="img/icons/icon-152x152.png" />
+        <link rel="apple-touch-icon" href="img/icons/icon-192x192.png" />
+        <link rel="apple-touch-icon" href="img/icons/icon-384x384.png" />
+        <link rel="apple-touch-icon" href="img/icons/icon-512x512.png" />
+        <meta name="apple-mobile-web-app-status-bar" content="#F3F6F9" />
+        <meta name="theme-color" content="#F3F6F9" />
     
 </head>
 
@@ -147,17 +161,21 @@
                         <div class="bg-light rounded p-4 shadow" style="height: 100%;">
                             <div class="row centered-element">                                
                                 
-                                <div class=" col-auto">
+                                <div class=" col-auto position-relative">
                                     <span class="dot shadow-sm">
                                         <img src="img/smoke-detector.png " class=" big-svg"/>                                                
                                     </span>
+
+                                    <div class=" d-flex align-items-center justify-content-center" style="position:absolute; margin-left: 60%; margin-top: -20%;" id="smokeWarn">
+                                        <i class="fa fa-exclamation-circle text-center" style="color: red; font-size:xx-large"></i>
+                                    </div>
                                 </div>
 
                                 <div class="col">
                                     <div class="centered-element">                                        
                                         <h4 class="m-0">Smoke Detector :</h6>                                                                        
                                         <div class="d-flex">
-                                          <h5 class="mb-0 bigNum" >No Smoke Detected</h3>                                          
+                                          <p class="mb-0" id="smokeText">No Smoke Detected</p>                                          
                                         </div>                                        
                                     </div>                                  
                                 </div>
@@ -177,11 +195,9 @@
                                 <div class="col">                                    
                                     <div>                                                                                
                                         <div class="d-flex justify-content-between mb-3">
-                                            <div class="d-flex align-items-center">
-                                                
+                                            <div class="d-flex align-items-center">                                                
                                                 <h4 class="m-0"> Watt Meter</h6>
                                             </div>                    
-                                            <a href="https://images.app.goo.gl/f4ZV9d6B1wu9DCpK9" >Show All</a>
                                         </div>
 
                                         <div class="row">
@@ -498,9 +514,11 @@
     </div>
 
     <!-- JavaScript Libraries -->
+<!--     <script src="/serviceWorker.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>    
+    
 
 
 </body>
