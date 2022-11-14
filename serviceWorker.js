@@ -51,7 +51,7 @@ self.addEventListener("activate", evt => {
     caches.keys().then(keys => {
       return Promise.all(
         keys.filter(key => key !== staticSmartHome)
-        .map(key => caches.delete())
+        .map(key => caches.delete(key))
       )
     })
   )
