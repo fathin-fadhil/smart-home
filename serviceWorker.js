@@ -1,4 +1,4 @@
-const staticSmartHome = "smart-home-dashboard"
+const staticSmartHome = "smart-home-dashboard-v1"
 const assets = [
   "./",
   "index.html",
@@ -42,6 +42,17 @@ self.addEventListener("install", installEvent => {
   installEvent.waitUntil(
     caches.open(staticSmartHome).then(cache => {
       cache.addAll(assets)
+    })
+  )
+})
+
+self.addEventListener("activate", evt => {
+  evt.waitUntil(
+    caches.keys().then(keys => {
+      return Promise.all(
+        keys.filter(key => key !== staticSmartHome)
+        .map(key => caches.delete())
+      )
     })
   )
 })
