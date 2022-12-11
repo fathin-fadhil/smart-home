@@ -183,7 +183,7 @@ $(document).ready(function() {
         curr = snap.val().current
 
         $("#dt-watt").text(watt)
-        $("#dt-volt").text(volt)
+        $("#dt-volt").text(volt.toString().substring(0,5))
         $("#dt-tWatt").text(tWatt)
         $("#dt-curr").text(curr)
 
